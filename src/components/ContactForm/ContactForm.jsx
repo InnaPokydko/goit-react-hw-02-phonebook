@@ -1,4 +1,6 @@
-class ContactForm extends Component {
+import { Component } from 'react';
+
+export class ContactForm extends Component {
   state = {
     name: '',
     id: '',
@@ -40,4 +42,4 @@ class ContactForm extends Component {
   }
 }
 
-export default ContactForm;
+

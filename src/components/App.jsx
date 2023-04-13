@@ -1,4 +1,5 @@
-import ContactForm from "./ContactForm/ContactForm";
+import { Component } from 'react';
+import ContactForm from './ContactForm/ContactForm';
 
 export class App extends Component {
   state = {
@@ -8,15 +9,14 @@ export class App extends Component {
 
   
   render() {
-    // const { inputValue } = this.state;
+    const { name } = this.state;
   return (
     <div>
   <h1>Phonebook</h1>
-  <ContactForm/>
+  <ContactForm name={name}/>
 
   <h2>Contacts</h2>
-  <Filter/>
-  <ContactList />
+ 
 </div>
   );
 };
