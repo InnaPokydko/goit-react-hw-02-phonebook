@@ -5,7 +5,7 @@ import { Formik, Form, ErrorMessage } from 'formik';
 class ContactForm extends Component {
   state = {
     name: '',
-    id: '',
+  number: ''
   };
 
   handleSubmit = (values, { resetForm }) => {

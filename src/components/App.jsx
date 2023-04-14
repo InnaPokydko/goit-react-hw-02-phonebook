@@ -12,12 +12,10 @@ export class App extends Component {
       {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
     ],
     filter: '',
-    name: '',
-    number: ''
-  }
+      }
 
     render() {
-    const { contacts, filter } = this.state;
+    const {  filter } = this.state;
   return (
     <div>
   <h1>Phonebook</h1>
