@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
   );
 };
 
-export default ContactItem;
+// export default ContactItem;
 
 ContactListItem.propTypes = {
   contact: PropTypes.objectOf(PropTypes.string).isRequired,
