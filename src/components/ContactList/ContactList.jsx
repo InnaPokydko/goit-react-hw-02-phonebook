@@ -1,9 +1,17 @@
-import React from "react";
-import { ContactItem } from "components/ContactItem/ContactItem";
+import PropTypes from 'prop-types';
+import ContactItem from 'components/ContactItem/ContactItem';
 
-export const ContactList = ContactItem.map((ContactItemId) =>
-  <li key={ContactItemId.id}>
-    {ContactItemId.text}
-  </li>
-)
+const ContactList = ({ contacts, onDelete }) => {
+  return (
+    <ul>
+      <ContactItem contacts={contacts} onDelete={onDelete} />
+    </ul>
+  );
+};
 
+export default ContactList;
+
+ContactItem.propTypes = {
+  contacts: PropTypes.array.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};

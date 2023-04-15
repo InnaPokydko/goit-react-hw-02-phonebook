@@ -5,7 +5,7 @@ import { Formik, Form, ErrorMessage } from 'formik';
 class ContactForm extends Component {
   state = {
     name: '',
-  number: ''
+    number: '',
   };
 
   handleSubmit = (values, { resetForm }) => {
@@ -19,9 +19,9 @@ class ContactForm extends Component {
     return (
       <Formik initialValues={{ name, number }} onSubmit={this.handleSubmit}>
         <Form>
-          <label>
+          <label htmlFor="name">
             Name
-            <input
+            <input 
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -30,7 +30,7 @@ class ContactForm extends Component {
             />
             <ErrorMessage name="name" component="div" />
           </label>
-          <label>
+          <label htmlFor="number">
             Number
             <input
               type="tel"
@@ -53,8 +53,6 @@ export default ContactForm;
 ContactForm.propTypes = {
   handleSubmit: PropTypes.func,
 };
-
-
 
 //   // Відповідає за оновлення стану
 //   handleChange = e => {
@@ -91,5 +89,3 @@ ContactForm.propTypes = {
 //     );
 //   }
 // }
-
-
