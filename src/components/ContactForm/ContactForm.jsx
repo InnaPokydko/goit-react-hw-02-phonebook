@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Formik, Form, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import { FormBox, Input, Label, BtnForm } from './ContactForm.styled';
 
 class ContactForm extends Component {
@@ -22,7 +22,7 @@ class ContactForm extends Component {
         <FormBox>
           <Label htmlFor="name">
             Name
-            <Input 
+            <Input
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -42,8 +42,8 @@ class ContactForm extends Component {
             />
           </Label>
           <ErrorMessage name="number" component="div" />
-                   <BtnForm type="submit">Add contact</BtnForm>
-                 </FormBox>
+          <BtnForm type="submit">Add contact</BtnForm>
+        </FormBox>
       </Formik>
     );
   }
