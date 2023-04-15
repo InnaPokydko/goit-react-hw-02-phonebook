@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form, ErrorMessage } from 'formik';
+import { FormBox, Input, Label, BtnForm } from './ContactForm.styled';
 
 class ContactForm extends Component {
   state = {
@@ -18,10 +19,10 @@ class ContactForm extends Component {
 
     return (
       <Formik initialValues={{ name, number }} onSubmit={this.handleSubmit}>
-        <Form>
-          <label htmlFor="name">
+        <FormBox>
+          <Label htmlFor="name">
             Name
-            <input 
+            <Input 
               type="text"
               name="name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -29,20 +30,20 @@ class ContactForm extends Component {
               required
             />
             <ErrorMessage name="name" component="div" />
-          </label>
-          <label htmlFor="number">
+          </Label>
+          <Label htmlFor="number">
             Number
-            <input
+            <Input
               type="tel"
               name="number"
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
             />
-          </label>
+          </Label>
           <ErrorMessage name="number" component="div" />
-          <button type="submit">Add contact</button>
-        </Form>
+                   <BtnForm type="submit">Add contact</BtnForm>
+                 </FormBox>
       </Formik>
     );
   }
