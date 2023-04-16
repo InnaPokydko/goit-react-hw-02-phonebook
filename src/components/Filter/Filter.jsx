@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import { Input } from './Filter.styled';
 
 const Filter = ({ value, onChange }) => (
   <label>
-    <input type="text" placeholder="Please enter name" value={value} onChange={onChange} />
+    <Input type="text" placeholder="Please enter name" value={value} onChange={onChange} />
   </label>
 );
 
