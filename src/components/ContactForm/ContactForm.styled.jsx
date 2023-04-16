@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const FormBox = styled.form`
   display: flex;
   justify-content: space-around;
-  width: 450px;
+  width: 350px;
   height: 130px;
   border-radius: 10px;
   flex-direction: column;

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Contacts = styled.ul`
 display: flex;
   justify-content: space-evenly;
-  min-width: 300px;
+ width: 300px;
   height: auto;
   border-radius: 10px;
   flex-direction: column;

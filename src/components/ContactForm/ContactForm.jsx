@@ -10,7 +10,7 @@ class ContactForm extends Component {
   };
 
   handleSubmit = (values, { resetForm }) => {
-    this.props.onSubmit(values);
+      this.props.onSubmit(values);
     resetForm();
   };
 
