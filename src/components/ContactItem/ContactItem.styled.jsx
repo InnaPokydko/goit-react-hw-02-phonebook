@@ -20,10 +20,5 @@ cursor: pointer;
 box-shadow: 4px 4px 6px 0px rgba(66, 68, 90, 1);
 
 &:hover {
-  background-image: linear-gradient(
-    to right,
-    #dae2f8 0%,
-    #d6a4a4 51%,
-    #dae2f8 100%
-  );
+  background-image: linear-gradient(to right, #1D976C 0%, #93F9B9 51%, #1D976C 100%);
 }`

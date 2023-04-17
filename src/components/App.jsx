@@ -20,8 +20,8 @@ export class App extends Component {
     const newContact = { id: nanoid(), name, number };
     this.state.contacts.find(contact => contact.name === name)
       ? alert(`${name} is already in contact`)
-      : this.setState(({ contacts }) => ({
-          contacts: [newContact, ...contacts],
+      : this.setState(prevState => ({
+          contacts: [newContact, ...prevState.contacts],
         }));
   };
 
