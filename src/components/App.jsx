@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import ContactList from './ContactList/ContactList';
-import ContactForm from './ContactForm/ContactForm';
+import  ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 import { Container, Title, SecondTitle } from './App.styled';
 
@@ -16,15 +16,37 @@ export class App extends Component {
     filter: '',
   };
 
-  addContact = ({ name, number }) => {
-    const newContact = { id: nanoid(), name, number };
+  addContact = (newContact) => {
+    const { contacts } = this.state;
+    const isContactExist = contacts.some(
+      (contact) =>
+        contact.name.toLowerCase() === newContact.name.toLowerCase() ||
+        contact.number === newContact.number
+    );
     
-    this.state.contacts.find(contact => contact.name === name)
-      ? alert(`${name} is already in contact`)
-      : this.setState(prevState => ({
-          contacts: [newContact, ...prevState.contacts],
-        }));
+    if (isContactExist) {
+      alert(`${newContact.name} is already in contact`);
+    } else {
+      this.setState((prevState) => ({
+        contacts: [...prevState.contacts, newContact],
+      }));
+    }
   };
+  
+  // addContact = ({ name, number }) => {
+  //   const isContactExist = this.state.contacts.some(
+  //     (contact) => contact.name.toLowerCase() === name.toLowerCase()
+  //   );
+    
+  //   if (isContactExist) {
+  //     alert(`${name} is already in contact`);
+  //   } else {
+  //     const newContact = { id: nanoid(), name, number };
+  //     this.setState((prevState) => ({
+  //       contacts: [newContact, ...prevState.contacts],
+  //     }));
+  //   } 
+  // };
 
   changeFilter = e => {
     const { value } = e.target;
