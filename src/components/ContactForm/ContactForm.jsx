@@ -8,7 +8,7 @@ class ContactForm extends Component {
     name: '',
     number: '',
   };
-
+      
   handleSubmit = (values, { resetForm }) => {
       this.props.onSubmit(values);
     resetForm();
